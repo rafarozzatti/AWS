@@ -26,9 +26,11 @@ Antes de entender a nuvem, é importante compreender o modelo cliente-servidor.
 
 Nesse modelo:
 
-- O **cliente** faz uma solicitação.
-- O **servidor** processa essa solicitação.
-- O servidor retorna uma resposta ao cliente.
+1. O cliente faz uma requisição.
+2. O servidor recebe a requisição.
+3. O servidor valida se ela pode ser atendida.
+4. O servidor processa a solicitação.
+5. O servidor retorna uma resposta ao cliente.
 
 Exemplo:
 
@@ -44,219 +46,102 @@ Servidor → Resposta → Cliente
 
 ## Analogia da cafeteria
 
-A cafeteria representa o modelo cliente-servidor:
+Imagine que um cliente entra na cafeteria e faz um pedido de café. A barista recebe esse pedido, verifica se ele é válido (por exemplo, se o cliente realizou o pagamento e se o item existe no cardápio), prepara a bebida e a entrega ao cliente.
+
+Na analogia:
 
 | Cafeteria | Computação |
 |-----------|------------|
 | Cliente fazendo pedido | Usuário/aplicação fazendo uma requisição |
 | Pedido de café | Solicitação |
 | Barista | Servidor |
+| Preparação do café | Processamento da solicitação |
 | Café entregue | Resposta |
 
 O cliente solicita algo e o servidor responde, desde que a solicitação seja válida.
 
----
+## Pague Apenas Pelo Que Usar (Pay as You Go)
 
-# 3. História da AWS
+Outro conceito importante apresentado com a analogia da cafeteria é o modelo de cobrança da AWS.
 
-## Origem
+Imagine que uma cafeteria contrata funcionários conforme a quantidade de clientes:
 
-No início dos anos 2000, a Amazon era uma empresa de comércio eletrônico.
+- Em dias movimentados, mais baristas são necessários.
+- Em dias tranquilos, menos funcionários trabalham.
 
-Com o crescimento da plataforma, a equipe de tecnologia precisou aumentar constantemente:
+Assim, o proprietário paga apenas pelas horas realmente trabalhadas, evitando custos desnecessários com funcionários ociosos.
 
-- Servidores
-- Armazenamento
-- Capacidade computacional
+Na AWS acontece o mesmo com os recursos computacionais:
 
-Para resolver esses desafios, a Amazon criou ferramentas internas para tornar sua infraestrutura mais:
+- Os recursos são **provisionados** quando há necessidade.
+- Quando deixam de ser necessários, podem ser **desprovisionados** rapidamente.
+- Após serem removidos, a cobrança é interrompida.
 
-- Padronizada
-- Eficiente
-- Escalável
+Esse modelo elimina a necessidade de comprar infraestrutura antecipadamente, como acontece em ambientes **on-premises**, onde os servidores precisam ser adquiridos antes mesmo de saber a demanda real.
 
-Em 2003, a empresa percebeu que outras organizações enfrentavam problemas semelhantes.
+### Conceitos importantes
 
-Assim surgiu a ideia de oferecer infraestrutura como serviço.
+- **Provisionar:** criar e disponibilizar um recurso (servidor, banco de dados, armazenamento etc.).
+- **Desprovisionar:** remover um recurso que não está mais sendo utilizado.
 
----
-
-## Primeiros serviços AWS
-
-| Ano | Serviço | Função |
-|---|---|---|
-| 2004 | Amazon SQS | Serviço de filas de mensagens |
-| 2006 | Amazon S3 | Armazenamento de objetos |
-| 2006 | Amazon EC2 | Computação escalável |
-
-Inicialmente utilizada por startups e desenvolvedores, a AWS rapidamente cresceu e passou a atender:
-
-- Empresas pequenas
-- Grandes corporações
-- Governos
-- Organizações globais
+> **Resumo:** Na AWS você paga apenas pelos recursos utilizados e somente pelo tempo em que eles permanecem ativos, permitindo escalar a infraestrutura conforme a demanda e reduzindo desperdícios.
 
 ---
 
-# 4. O que é Computação em Nuvem?
+# 3. O que é Computação em Nuvem?
 
 A computação em nuvem é:
 
 > A entrega sob demanda de recursos de TI pela internet, com pagamento conforme o uso.
 
-Essa definição possui quatro conceitos principais:
+---
+
+## Como funciona a computação em nuvem
+
+Imagine que uma empresa precise de um servidor para hospedar uma aplicação.
+
+Com a AWS, ela pode criar esse servidor em poucos minutos (**sob demanda**), acessá-lo e gerenciá-lo de qualquer lugar com uma conexão à internet (**pela internet**). Esse servidor é um dos diversos **recursos de TI** disponíveis na plataforma, assim como bancos de dados, armazenamento e redes. Quando o servidor não for mais necessário, basta removê-lo e a empresa deixa de pagar por ele (**pagamento conforme o uso**).
+
+Esse modelo elimina a necessidade de comprar e manter infraestrutura física, tornando o uso dos recursos mais flexível e econômico.
 
 ---
 
-## 4.1 Entrega sob demanda
+# 4. Tipos de Implantação na Nuvem
 
-Os recursos podem ser disponibilizados rapidamente conforme a necessidade.
+Existem três principais modelos de implantação de recursos de TI:
 
-Exemplo:
+### ☁️ Nuvem (Cloud)
 
-Uma empresa precisa de mais armazenamento.
+Toda a infraestrutura é hospedada na nuvem. A empresa pode migrar aplicações existentes, criar novas aplicações ou combinar ambas as abordagens.
 
-Na AWS ela pode:
+**Exemplo:** uma aplicação utiliza servidores, banco de dados e rede hospedados inteiramente na AWS.
 
-1. Criar o recurso.
-2. Utilizar.
-3. Remover quando não precisar mais.
+### 🖥️ On-Premises
 
-Não é necessário comprar equipamentos antecipadamente.
+A infraestrutura é mantida no próprio datacenter da empresa. Esse modelo oferece maior controle sobre os recursos, mas exige que a organização seja responsável pela aquisição, manutenção e gerenciamento do hardware.
 
----
+É utilizado quando há necessidade de recursos dedicados, baixa latência ou requisitos específicos de negócio.
 
-## 4.2 Recursos de TI
+### 🔄 Híbrido
 
-Recursos de TI incluem:
+Combina recursos on-premises e em nuvem. É indicado quando parte das aplicações precisa permanecer na infraestrutura local, enquanto outras utilizam os serviços da nuvem.
 
-- Servidores
-- Armazenamento
-- Bancos de dados
-- Redes
-- IA
-- Machine Learning
-- Aplicações
+**Exemplo:** uma empresa mantém um sistema legado em seu datacenter, mas utiliza a AWS para processamento e análise de dados.
 
-Esses recursos podem ser utilizados para criar e executar soluções.
+> **Resumo:**  
+> - **Cloud:** tudo na nuvem.  
+> - **On-Premises:** tudo na infraestrutura da empresa.  
+> - **Híbrido:** combinação dos dois modelos.
 
 ---
 
-## 4.3 Pela internet
-
-Os recursos da AWS são acessados remotamente.
-
-O usuário pode gerenciar sua infraestrutura:
-
-- De casa
-- Do trabalho
-- De qualquer lugar do mundo
-
-Basta possuir:
-
-- Conexão com internet
-- Conta AWS
-
----
-
-## 4.4 Pagamento conforme utilização
-
-Na AWS você paga somente pelos recursos utilizados.
-
-Exemplo:
-
-- Criou um servidor por algumas horas → paga por esse período.
-- Removeu o servidor → deixa de pagar pelo uso.
-
-Esse modelo evita grandes investimentos iniciais.
-
----
-
-# 5. Datacenters
-
-As aplicações precisam existir em uma infraestrutura física.
-
-Essa infraestrutura fica localizada em **datacenters**.
-
-Um datacenter é uma instalação física contendo:
-
-- Servidores
-- Equipamentos de rede
-- Sistemas de armazenamento
-
-Eles possuem:
-
-- Energia redundante
-- Refrigeração
-- Segurança física
-- Conectividade
-
-Com a AWS, o cliente utiliza esses datacenters sem precisar construí-los ou gerenciá-los.
-
----
-
-# 6. Modelos de Implantação
-
-Existem três principais modelos de implantação:
-
----
-
-# 6.1 Nuvem (Cloud)
-
-Os recursos são hospedados na AWS.
-
-Pode envolver:
-
-- Migração de aplicações existentes.
-- Criação de novas aplicações.
-
-Exemplo:
-
-Uma aplicação utilizando:
-
-- Servidores virtuais
-- Banco de dados
-- Rede
-
-Todos hospedados na AWS.
-
----
-
-# 6.2 On-Premises
-
-A empresa mantém sua própria infraestrutura física.
-
-Características:
-
-- Compra de hardware.
-- Manutenção própria.
-- Necessidade de espaço físico.
-- Maior responsabilidade operacional.
-
-Pode ser utilizado quando existem requisitos específicos, como baixa latência.
-
----
-
-# 6.3 Híbrido
-
-Combinação entre nuvem e infraestrutura própria.
-
-Exemplo:
-
-- Aplicação antiga continua no datacenter da empresa.
-- Novos serviços utilizam a AWS.
-
-É comum quando existem sistemas legados ou requisitos regulatórios.
-
----
-
-# 7. Benefícios da AWS
+# 5. Benefícios da AWS
 
 A AWS possui seis principais benefícios.
 
 ---
 
-## 7.1 Troca de despesas fixas por despesas variáveis
+## 5.1 Troca de despesas fixas por despesas variáveis
 
 Modelo tradicional:
 
@@ -282,7 +167,7 @@ Conceitos:
 
 ---
 
-## 7.2 Economias massivas em escala
+## 5.2 Economias massivas em escala
 
 A AWS possui uma infraestrutura enorme e compra hardware em grande quantidade.
 
@@ -294,7 +179,7 @@ Isso permite:
 
 ---
 
-## 7.3 Parar de adivinhar capacidade
+## 5.3 Parar de adivinhar capacidade
 
 No modelo tradicional, empresas precisam prever crescimento.
 
@@ -324,7 +209,7 @@ Na AWS:
 
 ---
 
-## 7.4 Velocidade e agilidade
+## 5.4 Velocidade e agilidade
 
 A AWS permite criar ambientes rapidamente.
 
@@ -341,7 +226,7 @@ Caso um teste não funcione:
 
 ---
 
-## 7.5 Não manter datacenters
+## 5.5 Não manter datacenters
 
 A AWS cuida da infraestrutura física.
 
@@ -356,7 +241,7 @@ Assim, pode focar no próprio negócio.
 
 ---
 
-## 7.6 Alcance global
+## 5.6 Alcance global
 
 A AWS possui infraestrutura espalhada pelo mundo.
 
@@ -370,7 +255,7 @@ Benefícios:
 
 ---
 
-# 8. Infraestrutura Global da AWS
+# 6. Infraestrutura Global da AWS
 
 A infraestrutura AWS é organizada em:
 
@@ -382,7 +267,7 @@ Região
 
 ---
 
-# 8.1 Região AWS
+# 6.1 Região AWS
 
 Uma Região é uma localização geográfica onde a AWS possui infraestrutura.
 
@@ -397,7 +282,7 @@ Escolher uma região próxima aos usuários ajuda a reduzir latência.
 
 ---
 
-# 8.2 Zona de Disponibilidade (AZ)
+# 6.2 Zona de Disponibilidade (AZ)
 
 Uma AZ é formada por um ou mais datacenters.
 
@@ -411,7 +296,7 @@ As AZs são separadas fisicamente para evitar que uma falha afete todas.
 
 ---
 
-# 8.3 Alta Disponibilidade
+# 6.3 Alta Disponibilidade
 
 Alta disponibilidade significa manter aplicações acessíveis com o mínimo de interrupção.
 
@@ -423,7 +308,7 @@ Para isso, utiliza-se:
 
 ---
 
-# 8.4 Tolerância a Falhas
+# 6.4 Tolerância a Falhas
 
 É a capacidade de continuar funcionando mesmo quando vários componentes apresentam falhas.
 
@@ -431,7 +316,7 @@ O objetivo é eliminar pontos únicos de falha.
 
 ---
 
-# 8.5 Failover
+# 6.5 Failover
 
 Failover é transferir a operação para outro ambiente quando ocorre uma falha.
 
@@ -443,13 +328,18 @@ Região São Paulo indisponível:
 
 ---
 
-# 9. Modelo de Responsabilidade Compartilhada
+# 7. Modelo de Responsabilidade Compartilhada
 
-A segurança na AWS é dividida entre AWS e cliente.
+A segurança na AWS é dividida entre a AWS e o cliente, seguindo o **Modelo de Responsabilidade Compartilhada**.
+
+> **AWS é responsável pela segurança DA nuvem (Security OF the Cloud).**  
+> **O cliente é responsável pela segurança NA nuvem (Security IN the Cloud).**
+
+Isso significa que a AWS protege toda a infraestrutura física que executa os serviços em nuvem, enquanto o cliente é responsável por proteger os recursos, dados e configurações que utiliza dentro da AWS.
 
 ## AWS: Segurança DA nuvem
 
-A AWS é responsável por:
+A AWS é responsável por proteger a infraestrutura que executa os serviços da plataforma, incluindo:
 
 - Datacenters.
 - Hardware.
@@ -461,7 +351,7 @@ A AWS é responsável por:
 
 ## Cliente: Segurança NA nuvem
 
-O cliente é responsável por:
+O cliente é responsável por proteger e configurar corretamente os recursos que utiliza, incluindo:
 
 - Dados.
 - Usuários.
@@ -469,11 +359,14 @@ O cliente é responsável por:
 - Aplicações.
 - Configurações.
 - Sistema operacional (quando aplicável).
-- Criptografia quando for responsabilidade do cliente.
+- Criptografia (quando for responsabilidade do cliente).
+
+> **Dica para memorizar:**  
+> **A AWS protege a infraestrutura; o cliente protege tudo o que coloca e configura dentro dela.**
 
 ---
 
-# 10. Exemplo Real: Empresa de E-commerce
+# 8. Exemplo Real: Empresa de E-commerce
 
 Uma empresa deseja expandir globalmente.
 
