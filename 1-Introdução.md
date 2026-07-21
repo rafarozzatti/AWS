@@ -1,4 +1,4 @@
-# AWS Cloud Practitioner Essentials - Introdução
+# AWS Cloud Practitioner Essentials - Módulo 1
 
 ## 1. Introdução à AWS
 
@@ -60,7 +60,7 @@ Na analogia:
 
 O cliente solicita algo e o servidor responde, desde que a solicitação seja válida.
 
-## Pague Apenas Pelo Que Usar (Pay as You Go)
+## Pague Apenas Pelo Que Usar
 
 Outro conceito importante apresentado com a analogia da cafeteria é o modelo de cobrança da AWS.
 
@@ -269,7 +269,7 @@ Região
 
 # 6.1 Região AWS
 
-Uma Região é uma localização geográfica onde a AWS possui infraestrutura.
+Uma Região é uma localização geográfica onde a AWS possui infraestrutura para hospedar seus serviços. Cada região é composta por **no mínimo três Zonas de Disponibilidade (AZs)** fisicamente separadas, garantindo maior disponibilidade e resiliência.
 
 Exemplos:
 
@@ -278,7 +278,7 @@ Exemplos:
 - Paris
 - Ohio
 
-Escolher uma região próxima aos usuários ajuda a reduzir latência.
+Escolher uma região próxima aos usuários ajuda a reduzir a latência e melhorar o desempenho das aplicações.
 
 ---
 
