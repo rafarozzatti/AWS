@@ -90,19 +90,7 @@ Esse modelo elimina a necessidade de comprar infraestrutura antecipadamente, com
 
 # 3. O que é Computação em Nuvem?
 
-A computação em nuvem é:
-
-> A entrega sob demanda de recursos de TI pela internet, com pagamento conforme o uso.
-
----
-
-## Como funciona a computação em nuvem
-
-Imagine que uma empresa precise de um servidor para hospedar uma aplicação.
-
-Com a AWS, ela pode criar esse servidor em poucos minutos (**sob demanda**), acessá-lo e gerenciá-lo de qualquer lugar com uma conexão à internet (**pela internet**). Esse servidor é um dos diversos **recursos de TI** disponíveis na plataforma, assim como bancos de dados, armazenamento e redes. Quando o servidor não for mais necessário, basta removê-lo e a empresa deixa de pagar por ele (**pagamento conforme o uso**).
-
-Esse modelo elimina a necessidade de comprar e manter infraestrutura física, tornando o uso dos recursos mais flexível e econômico.
+A AWS ú uma plataforma de computação em nuvem que disponibiliza serviços pela internet, como servidores virtuais, armazenamento, banco de dados, redes, inteligência artificial, segurança e muitos outros recursos. O cliente paga apenas pelo que utiliza e pode aumetar ou reduzir os recursos de acordo com a demanda, sem pecisar comprar ou manter infraestrutura física.
 
 ---
 
@@ -112,21 +100,15 @@ Existem três principais modelos de implantação de recursos de TI:
 
 ### ☁️ Nuvem (Cloud)
 
-Toda a infraestrutura é hospedada na nuvem. A empresa pode migrar aplicações existentes, criar novas aplicações ou combinar ambas as abordagens.
-
-**Exemplo:** uma aplicação utiliza servidores, banco de dados e rede hospedados inteiramente na AWS.
+Todos os recursos ficam na nuvem. Oferece escalabilidade, flexibilidade e pagamento conforme o uso.
 
 ### 🖥️ On-Premises
 
-A infraestrutura é mantida no próprio datacenter da empresa. Esse modelo oferece maior controle sobre os recursos, mas exige que a organização seja responsável pela aquisição, manutenção e gerenciamento do hardware.
-
-É utilizado quando há necessidade de recursos dedicados, baixa latência ou requisitos específicos de negócio.
+Os recursos ficam no datacenter da empresa. Oferece maior controle, mas menos benefícios da nuvem.
 
 ### 🔄 Híbrido
 
-Combina recursos on-premises e em nuvem. É indicado quando parte das aplicações precisa permanecer na infraestrutura local, enquanto outras utilizam os serviços da nuvem.
-
-**Exemplo:** uma empresa mantém um sistema legado em seu datacenter, mas utiliza a AWS para processamento e análise de dados.
+Combina recursos na nuvem e on-premises, permitindo integrar aplicações legadas com serviços em nuvem.
 
 > **Resumo:**  
 > - **Cloud:** tudo na nuvem.  
@@ -143,121 +125,43 @@ A AWS possui seis principais benefícios.
 
 ## 5.1 Troca de despesas fixas por despesas variáveis
 
-Modelo tradicional:
-
-A empresa precisa investir antecipadamente em:
-
-- Servidores
-- Datacenter
-- Equipamentos
-- Manutenção
-
-Mesmo que os recursos não sejam utilizados, o custo continua existindo.
-
-Na AWS:
-
-- O custo acompanha o uso.
-- Não existe necessidade de grande investimento inicial.
-
-Conceitos:
-
-**CapEx:** investimento inicial em infraestrutura.
-
-**OpEx:** despesas operacionais conforme utilização.
+Paga apenas pelo que usa, sem grandes investimentos iniciais.
 
 ---
 
 ## 5.2 Economias massivas em escala
 
-A AWS possui uma infraestrutura enorme e compra hardware em grande quantidade.
-
-Isso permite:
-
-- Melhores preços.
-- Redução de custos.
-- Disponibilização de tecnologia avançada para empresas de todos os tamanhos.
+A infraestrutura da AWS reduz os custos para os clientes.
 
 ---
 
-## 5.3 Parar de adivinhar capacidade
+## 5.3 Escalabilidade
 
-No modelo tradicional, empresas precisam prever crescimento.
-
-Problemas:
-
-### Excesso de capacidade
-
-Compra de infraestrutura demais.
-
-Resultado:
-
-- Recursos ociosos.
-- Dinheiro desperdiçado.
-
-### Falta de capacidade
-
-Infraestrutura insuficiente.
-
-Resultado:
-
-- Lentidão.
-- Má experiência do usuário.
-
-Na AWS:
-
-- Recursos podem aumentar ou diminuir conforme a demanda.
+Aumenta ou reduz reursos conforme a demanda.
 
 ---
 
-## 5.4 Velocidade e agilidade
+## 5.4 Agilidade
 
-A AWS permite criar ambientes rapidamente.
-
-Benefícios:
-
-- Testar novas ideias.
-- Criar ambientes temporários.
-- Inovar mais rápido.
-
-Caso um teste não funcione:
-
-- O recurso pode ser removido.
-- O pagamento é interrompido.
+Impalnta aplicações e serviços rapidamente.
 
 ---
 
-## 5.5 Não manter datacenters
+## 5.5 Sem manutenção de data centers
 
-A AWS cuida da infraestrutura física.
-
-A empresa não precisa gerenciar:
-
-- Servidores físicos.
-- Energia.
-- Refrigeração.
-- Equipamentos.
-
-Assim, pode focar no próprio negócio.
+A AWS gerencia a infraestrutura física.
 
 ---
 
 ## 5.6 Alcance global
 
-A AWS possui infraestrutura espalhada pelo mundo.
-
-Uma empresa pode disponibilizar aplicações em diferentes países sem construir novos datacenters.
-
-Benefícios:
-
-- Expansão internacional.
-- Menor latência.
-- Implantação rápida.
+Implanta aplicações em várias regiões do mundo em poucos minutos.
 
 ---
 
 # 6. Infraestrutura Global da AWS
 
-A infraestrutura AWS é organizada em:
+A infraestrutura global da AWS consiste em locais físicos em todo o mundo que contêm grupos de data centers.
 
 ```
 Região
@@ -269,7 +173,7 @@ Região
 
 # 6.1 Região AWS
 
-Uma Região é uma localização geográfica onde a AWS possui infraestrutura para hospedar seus serviços. Cada região é composta por **no mínimo três Zonas de Disponibilidade (AZs)** fisicamente separadas, garantindo maior disponibilidade e resiliência.
+Locais físicos da AWS ao redor do mundo, cada uma com **no mínimo três Zonas de Disponibilidade (AZs)**.
 
 Exemplos:
 
@@ -284,13 +188,7 @@ Escolher uma região próxima aos usuários ajuda a reduzir a latência e melhor
 
 # 6.2 Zona de Disponibilidade (AZ)
 
-Uma AZ é formada por um ou mais datacenters.
-
-Cada AZ possui:
-
-- Energia independente.
-- Rede independente.
-- Conectividade redundante.
+Um ou mais data centers isolados, com energia, rede e conctividade redundantes, garantindo alta disponibilidade, baixa latência e tolerância a flhas.
 
 As AZs são separadas fisicamente para evitar que uma falha afete todas.
 
@@ -298,33 +196,7 @@ As AZs são separadas fisicamente para evitar que uma falha afete todas.
 
 # 6.3 Alta Disponibilidade
 
-Alta disponibilidade significa manter aplicações acessíveis com o mínimo de interrupção.
-
-Para isso, utiliza-se:
-
-- Redundância.
-- Múltiplas AZs.
-- Componentes alternativos.
-
----
-
-# 6.4 Tolerância a Falhas
-
-É a capacidade de continuar funcionando mesmo quando vários componentes apresentam falhas.
-
-O objetivo é eliminar pontos únicos de falha.
-
----
-
-# 6.5 Failover
-
-Failover é transferir a operação para outro ambiente quando ocorre uma falha.
-
-Exemplo:
-
-Região São Paulo indisponível:
-
-→ Aplicação passa para outra região.
+A AWS oferece alta disponibilidade ao distrubuir recursos entre múltiplas Zonas de Disponibilidade (AZs). Como cada AZ é isolada e possui energia, rede e conectividade independentes, é recomendado distribuir os recursos entre elas. Assim, se uma AZ falhar, as aplicações continuam funcionando nas demais, garantindo redundância e tolerância a falhas.
 
 ---
 
@@ -332,8 +204,8 @@ Região São Paulo indisponível:
 
 A segurança na AWS é dividida entre a AWS e o cliente, seguindo o **Modelo de Responsabilidade Compartilhada**.
 
-> **AWS é responsável pela segurança DA nuvem (Security OF the Cloud).**  
-> **O cliente é responsável pela segurança NA nuvem (Security IN the Cloud).**
+> **AWS é responsável pela segurança DA nuvem.**  
+> **O cliente é responsável pela segurança NA nuvem.**
 
 Isso significa que a AWS protege toda a infraestrutura física que executa os serviços em nuvem, enquanto o cliente é responsável por proteger os recursos, dados e configurações que utiliza dentro da AWS.
 
@@ -363,90 +235,3 @@ O cliente é responsável por proteger e configurar corretamente os recursos que
 
 > **Dica para memorizar:**  
 > **A AWS protege a infraestrutura; o cliente protege tudo o que coloca e configura dentro dela.**
-
----
-
-# 8. Exemplo Real: Empresa de E-commerce
-
-Uma empresa deseja expandir globalmente.
-
-Problema:
-
-Quanto maior a distância entre o usuário e o servidor, maior a latência.
-
-Solução:
-
-Utilizar diferentes regiões AWS próximas dos clientes.
-
-Exemplo:
-
-- América do Sul → São Paulo
-- Ásia → Singapura
-
----
-
-## Alta disponibilidade no cenário
-
-A empresa distribui sua aplicação em múltiplas AZs.
-
-Se uma AZ falhar:
-
-- Outra AZ continua funcionando.
-
----
-
-## Segurança no cenário
-
-A AWS protege:
-
-- Datacenter.
-- Hardware.
-- Infraestrutura.
-
-A empresa protege:
-
-- Dados.
-- Acesso.
-- Criptografia.
-- Configurações.
-
----
-
-# Resumo Final
-
-## Computação em nuvem
-
-Entrega de recursos de TI pela internet, sob demanda e pagando pelo uso.
-
-## AWS
-
-Plataforma de nuvem que fornece infraestrutura global escalável.
-
-## Principais benefícios
-
-- Pague apenas pelo uso.
-- Reduza custos.
-- Escale conforme demanda.
-- Inove rapidamente.
-- Não gerencie datacenters.
-- Alcance clientes globalmente.
-
-## Infraestrutura
-
-```
-Região
- ↓
-Zona de Disponibilidade
- ↓
-Datacenter
-```
-
-## Segurança
-
-```
-AWS:
-Segurança DA nuvem
-
-Cliente:
-Segurança NA nuvem
-```
