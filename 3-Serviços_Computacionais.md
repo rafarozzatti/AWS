@@ -18,7 +18,7 @@ A AWS oferece diferentes níveis de gerenciamento, variando a responsabilidade e
 
 ---
 
-## AWS Lambda (resumido)
+## AWS Lambda
 
 O AWS Lambda é um serviço de computação sem servidor (serverless) que executa código em resposta a eventos, sem necessidade de provisionar ou gerenciar servidores. A AWS gerencia automaticamente a infraestrutura, o escalonamento e a disponibilidade, e você paga apenas pelo tempo de execução da função.
 
@@ -37,7 +37,7 @@ O AWS Lambda é um serviço de computação sem servidor (serverless) que execut
 
 ---
 
-## Contêineres (resumido)
+## Contêineres
 
 Os contêineres empacotam a aplicação e suas dependências em uma unidade portátil, garantindo consistência, portabilidade e escalabilidade.
 
